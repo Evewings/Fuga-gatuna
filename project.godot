@@ -13,7 +13,7 @@ config_version=5
 config/name="Fuga Gatuna"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/safeimagekit-Diseño sin título (1).png"
 
 [autoload]
 

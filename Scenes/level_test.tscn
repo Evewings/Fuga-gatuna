@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4c8qqottdk3n"]
+[gd_scene load_steps=24 format=3 uid="uid://b4c8qqottdk3n"]
 
 [ext_resource type="Texture2D" uid="uid://ckkh6srx2m5v2" path="res://Fondos/1.png" id="1_bkkb0"]
 [ext_resource type="PackedScene" uid="uid://o0fxo3f618iu" path="res://Scenes/PlayerTest.tscn" id="2_y1jbi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/npc_3.gd" id="8_k8ucx"]
 [ext_resource type="PackedScene" uid="uid://bvbbolm3nubr5" path="res://Scenes/npc_4.tscn" id="8_pb30k"]
 [ext_resource type="Script" path="res://Scripts/npc_4.gd" id="10_ewy34"]
+[ext_resource type="PackedScene" uid="uid://wnf4li54dg3s" path="res://Scenes/gato_1.tscn" id="12_eskfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp7pt"]
 size = Vector2(65.5, 49)
@@ -301,9 +302,6 @@ script = ExtResource("8_k8ucx")
 position = Vector2(-202, 280)
 script = ExtResource("10_ewy34")
 
-[node name="PlayerTest" parent="." instance=ExtResource("2_y1jbi")]
-position = Vector2(-301, -121)
-
 [node name="Objetos" type="Node2D" parent="."]
 
 [node name="Buzon" type="Area2D" parent="Objetos" groups=["Objeto"]]
@@ -317,3 +315,9 @@ shape = SubResource("RectangleShape2D_trfyd")
 [node name="Buzon" type="CollisionShape2D" parent="Objetos/Buzon/Buzon2"]
 position = Vector2(-342, -125)
 shape = SubResource("RectangleShape2D_efndu")
+
+[node name="Gato1" parent="." instance=ExtResource("12_eskfi")]
+position = Vector2(-362, -86)
+
+[node name="PlayerTest" parent="." instance=ExtResource("2_y1jbi")]
+position = Vector2(-301, -121)

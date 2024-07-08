@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk2l1r68iyafu"
+path="res://.godot/imported/LA CANCION DE LOS GATOS.mp3-8f451d0332c662af5a4272b418a73d4e.mp3str"
+
+[deps]
+
+source_file="res://Music/LA CANCION DE LOS GATOS.mp3"
+dest_files=["res://.godot/imported/LA CANCION DE LOS GATOS.mp3-8f451d0332c662af5a4272b418a73d4e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
