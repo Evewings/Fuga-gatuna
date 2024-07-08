@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvbbolm3nubr5"]
+
+[ext_resource type="Script" path="res://Scenes/npc_1.gd" id="1_7rx6h"]
+[ext_resource type="Texture2D" uid="uid://cg8lrskn0p1mp" path="res://Sprites/NPC 4-sheet.png" id="2_xd2n1"]
+
+[sub_resource type="Animation" id="Animation_tp076"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_tdmvd"]
+resource_name = "Parado"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ilxi2"]
+_data = {
+"Parado": SubResource("Animation_tdmvd"),
+"RESET": SubResource("Animation_tp076")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xwq4a"]
+radius = 93.3545
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88fmv"]
+size = Vector2(6, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfg63"]
+size = Vector2(23, 25)
+
+[node name="Npc4" type="Node2D"]
+script = ExtResource("1_7rx6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.499999, -1.4)
+scale = Vector2(0.115625, 0.10375)
+texture = ExtResource("2_xd2n1")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ilxi2")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Npc", "Objeto"]]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.097, 0.097)
+shape = SubResource("CircleShape2D_xwq4a")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_88fmv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_qfg63")

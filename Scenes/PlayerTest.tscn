@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://o0fxo3f618iu"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_d0ogl"]
+[ext_resource type="PackedScene" uid="uid://g2t8jti72nr8" path="res://Scenes/UI.tscn" id="2_3pb40"]
+[ext_resource type="Texture2D" uid="uid://055kjkm71x5y" path="res://Sprites/Ya sta.png" id="2_4kt0r"]
+
+[sub_resource type="Animation" id="Animation_yq0r8"]
+resource_name = "Abajo"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_6n5ti"]
+resource_name = "Arriba"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_m0e7a"]
+resource_name = "Derecha"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_m45v8"]
+resource_name = "Izquierda"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_q4kcc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xw8th"]
+_data = {
+"Abajo": SubResource("Animation_yq0r8"),
+"Arriba": SubResource("Animation_6n5ti"),
+"Derecha": SubResource("Animation_m0e7a"),
+"Izquierda": SubResource("Animation_m45v8"),
+"RESET": SubResource("Animation_q4kcc")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahpdh"]
+radius = 6.08276
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bxj11"]
+a = Vector2(2, -17)
+b = Vector2(2, 9)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(374, 243)
+disable_mode = 1
+script = ExtResource("1_d0ogl")
+dialogo_txt = ExtResource("2_3pb40")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, -3.785)
+scale = Vector2(0.0968749, 0.0950938)
+texture = ExtResource("2_4kt0r")
+hframes = 4
+vframes = 4
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_xw8th")
+}
+speed_scale = 1.738
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_ahpdh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_bxj11")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

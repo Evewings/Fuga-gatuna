@@ -1,0 +1,319 @@
+[gd_scene load_steps=23 format=3 uid="uid://b4c8qqottdk3n"]
+
+[ext_resource type="Texture2D" uid="uid://ckkh6srx2m5v2" path="res://Fondos/1.png" id="1_bkkb0"]
+[ext_resource type="PackedScene" uid="uid://o0fxo3f618iu" path="res://Scenes/PlayerTest.tscn" id="2_y1jbi"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_2wn7y"]
+[ext_resource type="AudioStream" uid="uid://ccahttjnray6d" path="res://Music/Cats & Soup  Music BGM - Track 01.mp3" id="3_h5bk8"]
+[ext_resource type="PackedScene" uid="uid://de2jgqrn41ejt" path="res://Scenes/npc_1.tscn" id="5_j6is4"]
+[ext_resource type="PackedScene" uid="uid://b1w8bqsj8e30a" path="res://Scenes/npc_2.tscn" id="5_oo6pb"]
+[ext_resource type="PackedScene" uid="uid://dy2jlj5disexg" path="res://Scenes/npc_3.tscn" id="6_5cm5l"]
+[ext_resource type="Script" path="res://Scripts/npc_2.gd" id="6_ecrth"]
+[ext_resource type="Script" path="res://Scripts/npc_3.gd" id="8_k8ucx"]
+[ext_resource type="PackedScene" uid="uid://bvbbolm3nubr5" path="res://Scenes/npc_4.tscn" id="8_pb30k"]
+[ext_resource type="Script" path="res://Scripts/npc_4.gd" id="10_ewy34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp7pt"]
+size = Vector2(65.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_851ms"]
+size = Vector2(111, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77ipy"]
+size = Vector2(32, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb0k4"]
+size = Vector2(21, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l2ds"]
+size = Vector2(98, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7wwd"]
+size = Vector2(120, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgm2"]
+size = Vector2(93, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxu5g"]
+size = Vector2(30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5nat"]
+size = Vector2(14, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trfyd"]
+size = Vector2(16, 24.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efndu"]
+size = Vector2(14, 19)
+
+[node name="Level_test" type="Node2D"]
+
+[node name="LevelBackground" type="Sprite2D" parent="."]
+texture = ExtResource("1_bkkb0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-126, -352)
+shape = SubResource("RectangleShape2D_fp7pt")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-133.5, -419)
+shape = SubResource("RectangleShape2D_851ms")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-157, -75)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-111, -75)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-156, -44)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-110, -44)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-158, -12)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-112, -12)
+shape = SubResource("RectangleShape2D_77ipy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(386, -438)
+shape = SubResource("RectangleShape2D_fp7pt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(369.5, -375)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(370, -312)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(368, -247)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, -152)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(194, -151)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, -88)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(194, -87)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(144, -26)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193, -25)
+shape = SubResource("RectangleShape2D_pb0k4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-303, -170)
+shape = SubResource("RectangleShape2D_6l2ds")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-286, -440)
+shape = SubResource("RectangleShape2D_i7wwd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-383, -506, -389, -479, -418, -433, -437, -395, -437, -368, -380, -373, -351, -344, -297, -341, -291, -334, -251, -368, -257, -326, -281, -293, -305, -294, -307, -321, -329, -321, -332, -297, -355, -294, -384, -325, -432, -329, -435, -288, -462, -280, -455, -261, -463, -246, -433, -222, -460, -187, -459, -150, -430, -118, -456, -80, -461, -51, -428, -25, -456, 19, -457, 43, -430, 75, -458, 103, -459, 140, -430, 169, -460, 200, -461, 234, -429, 261, -460, 295, -461, 331, -433, 355, -444, 386, -432, 413, -383, 465, -364, 459, -362, 423, -333, 413, -343, 382, -307, 363, -275, 389, -287, 413, -256, 430, -265, 458, 77, 461, 331, 463, 346, 478, 340, 504, 415, 505, 411, 482, 436, 459, 430, 435, 463, 411, 459, 384, 479, 362, 510, 369, 508, 277, 449, 225, 447, -108, 485, -139, 482, -153, 442, -150, 439, -193, 483, -193, 483, -207, 417, -270, 418, -347, 463, -384, 483, -384, 495, -401, 480, -417, 490, -446, 461, -454, 463, -492, 350, -492, 340, -507, 241, -507, 230, -476, -145, -476, -159, -506, -188, -505, -200, -473, -340, -471, -351, -503, -382, -505, -382, -524, 524, -520, 529, 517, -526, 521, -522, -521, -384, -524)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-174, -288, -138, -252, -74, -256, -74, -213, -140, -213, -174, -250)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(210, -212, 242, -244, 277, -246, 306, -282, 308, -323, 271, -288, 239, -286, 209, -255, 177, -257, 177, -275, -13, -274, -13, -292, -30, -290, -32, -213)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-382, -250, -223, -250, -223, -75, -237, -77, -239, -237, -368, -235)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-334, -42, -321, -26, -367, -27, -368, 0, -367, 125, -368, 146, -336, 149, -319, 158, -321, 170, -383, 170, -383, -43)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-224, -42, -223, 171, -287, 169, -272, 151, -239, 148, -241, 124, -238, -2, -238, -27, -287, -20, -267, -42)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(18.5, -357)
+shape = SubResource("RectangleShape2D_rwgm2")
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-28, -413, 66, -411, 67, -330, 71, -325, 103, -323, 103, -343, 124, -343, 124, -323, 131, -309, 161, -309, 166, -324, 166, -342, 188, -344, 188, -323, 219, -324, 226, -328, 256, -327, 258, -427, -29, -427)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-61, -106, -61, -171, 3, -170, 1, -155, -47, -155, -46, -106)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-88, -110)
+rotation = 1.57395
+polygon = PackedVector2Array(-61, -106, -61, -171, 1.46445, -170.005, 1, -155, -47, -155, -46, -106)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(21, -187)
+rotation = -3.14159
+polygon = PackedVector2Array(-61, -106, -61, -175, 3.00002, -175, 2.00002, -160, -46, -160, -46, -106)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(108.5, -77.7962)
+rotation = -1.5708
+polygon = PackedVector2Array(-66.7962, -106.5, -64.7962, -169.5, 3.20379, -169.5, 4.20379, -155.5, -48.7962, -155.5, -50.7962, -107.5)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_qxu5g")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-182, 128)
+shape = SubResource("RectangleShape2D_q5nat")
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-76, 198, -76, 219, 1, 219, 1, 39, -92, 37, -92, 59, -14, 59, -13, 198)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-380, 247, 0, 246, 0, 266, -380, 266)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-222, 302, -214, 302, -214, 415, -47, 415, -47, 427, -220, 427)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-428, 334, -367, 336, -366, 391, -374, 396, -423, 396, -429, 391)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(118, 156, 118, 135, 144, 135, 144, 155, 173, 155, 177, 151, 177, 81, 174, 77, 86, 77, 82, 82, 83, 151, 88, 156)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(51, 183, 98, 182, 98, 192, 114, 192, 113, 203, 51, 202)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(51, 38, 209, 38, 209, 204, 147, 204, 147, 190, 163, 190, 162, 181, 195, 181, 194, 58, 51, 59)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(50, 245, 128, 246, 129, 266, 52, 267)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(161, 246, 305, 246, 304, 268, 164, 268)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(227, 313, 289, 314, 289, 303, 227, 301)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(345, 315, 341, 305, 339, 290, 347, 279, 355, 273, 381, 270, 391, 276, 401, 290, 401, 304, 398, 310, 393, 318, 397, 321, 390, 326, 393, 336, 378, 335, 371, 346, 362, 333, 347, 339, 352, 328, 343, 322)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(226, 414, 226, 427, 305, 426, 306, 306, 291, 305, 291, 366, 227, 367, 227, 376, 291, 376, 291, 414)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(51, 303, 65, 303, 65, 413, 96, 413, 96, 426, 51, 426)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-14, 303, 0, 303, 0, 425, -13, 424)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-70, 349, -88, 348, -94, 343, -94, 286, -31, 287, -31, 343, -36, 348, -47, 349, -53, 349, -53, 331, -71, 332)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(274, 191, 305, 192, 304, 202, 260, 202, 260, 51, 260, 46, 401, 46, 402, 203, 338, 204, 338, 190, 394, 189, 395, 60, 275, 60)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(275, 135, 280, 141, 311, 140, 311, 120, 333, 120, 333, 139, 364, 140, 369, 135, 370, 65, 365, 60, 275, 60)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(272, -101, 258, -102, 258, -186, 402, -186, 401, -165, 273, -164)
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(325, -69, 325, -89, 350, -89, 350, -68, 381, -68, 386, -74, 385, -145, 292, -145, 291, -74, 296, -69)
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(371, -17, 401, -17, 401, -6, 372, -6)
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(259, -65, 273, -65, 273, -5, 259, -5)
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-383, -248, -382, -196, -367, -197, -368, -234)
+
+[node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-381, -161, -367, -161, -366, -92, -350, -90, -351, -71, -381, -71)
+
+[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(348, 425, 359, 416, 359, 451, 348, 452)
+
+[node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(413, 414, 425, 424, 425, 452, 411, 452)
+
+[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(451, 350, 510, 350, 510, 363, 451, 363)
+
+[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-189, 270, -189, 287, -184, 289, -162, 289, -158, 285, -154, 289, -129, 289, -127, 286, -127, 270)
+
+[node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(134, 378, 134, 395, 103, 396, 98, 391, 99, 274, 102, 270, 190, 270, 193, 275, 192, 391, 187, 396, 161, 396, 160, 378)
+
+[node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-98, 173, -68, 172, -63, 168, -62, 151, -57, 155, -36, 156, -31, 152, -31, 93, -62, 94, -62, 81, -65, 77, -154, 76, -158, 82, -158, 166, -153, 173, -121, 173, -121, 155, -99, 155)
+
+[node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(10, -109, 7, -112, 3, -112, -1, -115, -2, -120, -4, -117, -4, -114, -6, -114, -6, -125, -2, -129, 1, -128, 5, -129, 5, -126, 5, -124, 7, -124, 12, -129, 18, -129, 18, -125, 20, -126, 23, -130, 24, -118, 19, -122, 13, -118, 12, -115, 12, -111)
+
+[node name="CollisionPolygon2D42" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-425, -317, -404, -317, -403, -299, -424, -301)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h5bk8")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("character")]
+position = Vector2(6, 0)
+zoom = Vector2(2, 2)
+script = ExtResource("3_2wn7y")
+character = NodePath("../PlayerTest")
+
+[node name="Npc1" parent="." groups=["Npc", "Objeto"] instance=ExtResource("5_j6is4")]
+position = Vector2(157, 158)
+
+[node name="Npc2" parent="." groups=["Npc", "Objeto"] instance=ExtResource("5_oo6pb")]
+position = Vector2(388, 351)
+script = ExtResource("6_ecrth")
+
+[node name="Npc3" parent="." groups=["Npc", "Objeto"] instance=ExtResource("6_5cm5l")]
+position = Vector2(-388, -305)
+script = ExtResource("8_k8ucx")
+
+[node name="Npc4" parent="." groups=["Npc", "Objeto"] instance=ExtResource("8_pb30k")]
+position = Vector2(-202, 280)
+script = ExtResource("10_ewy34")
+
+[node name="PlayerTest" parent="." instance=ExtResource("2_y1jbi")]
+position = Vector2(-301, -121)
+
+[node name="Objetos" type="Node2D" parent="."]
+
+[node name="Buzon" type="Area2D" parent="Objetos" groups=["Objeto"]]
+
+[node name="Buzon" type="CollisionShape2D" parent="Objetos/Buzon"]
+position = Vector2(-342, -113.375)
+shape = SubResource("RectangleShape2D_trfyd")
+
+[node name="Buzon2" type="StaticBody2D" parent="Objetos/Buzon"]
+
+[node name="Buzon" type="CollisionShape2D" parent="Objetos/Buzon/Buzon2"]
+position = Vector2(-342, -125)
+shape = SubResource("RectangleShape2D_efndu")
